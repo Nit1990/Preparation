@@ -1,0 +1,5 @@
+namespace Factory{
+    class Factory{
+
+    }
+}
