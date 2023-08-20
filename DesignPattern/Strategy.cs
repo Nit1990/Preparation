@@ -1,17 +1,13 @@
 namespace DesignPattern
 {
 
-    // Context class
+    // Context class - Vehicle 
     public class Context
     {
-        private IStrategy _stratergy;
+        private IStrategy _stratergy; // interface Object to make code dynamic
 
         public Context() { }
-        public Context(IStrategy strategy)
-        {
-            _stratergy = strategy;
-
-        }
+       
         public void SetStrategy(IStrategy strategy)
         {
             this._stratergy = strategy;
@@ -26,22 +22,25 @@ namespace DesignPattern
 
     }
 
-    public interface IStrategy
+ // Drive Strategy
+    public interface IStrategy 
     {
         object DoAlgorithm(object data);
     }
 
+    // SportsCar Strategy
     public class ConcreteStrategyA : IStrategy
     {
         public object DoAlgorithm(object data)
         {
-            var list = data as List<string>;
+             var list = data as List<string>;
             list.Sort();
 
             return list;
         }
     }
 
+    // Normalar Strategy
     public class ConcreteStrategyB : IStrategy
     {
         public object DoAlgorithm(object data)
