@@ -46,6 +46,7 @@ public class Program
         //obj.IsAnagram();
         //obj.ContainsDuplicate();
        // obj.TwoSum();
+       obj.BestTimeToBuy();
 
         // LinkedList
 
@@ -63,7 +64,7 @@ public class Program
       // objMedium.TopKFrequentElements();
       // objMedium.ProductExceptSelf();
       //objMedium.TwoSumArrayIsSorted();
-        objMedium.ThreeSum();
+       // objMedium.ThreeSum();
     // Strategy Design Pattern
 
      // The client code picks a concrete strategy and passes it to the

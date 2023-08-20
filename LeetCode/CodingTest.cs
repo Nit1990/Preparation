@@ -86,7 +86,8 @@ namespace Coding
 
         }
 
-        public void OccuranceInStringArray(){
+        public void OccuranceInStringArray()
+        {
             string[] str = new string[] { "a", "aa", "bbb", "aaabb" };
 
             for (int i = 0; i < str.Length; i++)
@@ -295,32 +296,38 @@ namespace Coding
         }
 
         // Palindrome String
-        public bool ValidPalindrome(){
+        public bool ValidPalindrome()
+        {
 
             string str = "A man, a plan, a canal: Panama";
 
-          //  str = Regex.Replace(str.ToLower(),"[^a-zA-Z0-9]","");
+            //  str = Regex.Replace(str.ToLower(),"[^a-zA-Z0-9]","");
 
-          int left = 0; // left pointer
-          int right = str.Length -1; // right pointer
+            int left = 0; // left pointer
+            int right = str.Length - 1; // right pointer
 
-          while(left < right){
-            if(!char.IsLetterOrDigit(str[left])){
+            while (left < right)
+            {
+                if (!char.IsLetterOrDigit(str[left]))
+                {
                     left++;
-            }
-            else if(!char.IsLetterOrDigit(str[right])){
-                right--;
-            }
-            else{
-                if(char.ToLower(str[left]) != char.ToLower(str[right])){
-                    return false;
                 }
-                left++;
-                right--;                
+                else if (!char.IsLetterOrDigit(str[right]))
+                {
+                    right--;
+                }
+                else
+                {
+                    if (char.ToLower(str[left]) != char.ToLower(str[right]))
+                    {
+                        return false;
+                    }
+                    left++;
+                    right--;
+                }
             }
-          }
-            
-        return true;  
+
+            return true;
         }
 
         // Index of First Occurrence in string
@@ -394,6 +401,8 @@ namespace Coding
 
         // Two Sum
         public void TwoSum()
+
+
         {
             int[] nums = { 3, 2, 4 };
             int target = 6;
@@ -414,7 +423,33 @@ namespace Coding
 
         }
 
-    }
+        // Sliding Window - Best Time to Buy and Sell Stock
+        public int BestTimeToBuy(){
+            int[] prices = { 7, 1, 5, 3, 6, 4 };
+            int buy = 0;
+            int sell = 1;
+            int maxP = 0;
 
+            while (sell < prices.Length)
+            {
+                if (prices[sell] > prices[buy])
+                {
+                    int profit = prices[sell] - prices[buy];
+                    if (maxP < profit)
+                    {
+                        maxP = profit;
+                    }
+                   
+                }
+                 else
+                    {
+                        buy = sell;
+                       
+                    }
+                     sell++;
+            }
+            return maxP;
+        }
+    }
 
 }
