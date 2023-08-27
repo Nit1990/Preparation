@@ -1,4 +1,4 @@
-namespace LinkedList
+namespace DataStructure
 {
 
     // Creating Node of a Linked List.

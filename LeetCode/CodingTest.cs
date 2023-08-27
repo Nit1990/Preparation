@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Collections;
 namespace Coding
 {
     class GMS
@@ -424,7 +425,8 @@ namespace Coding
         }
 
         // Sliding Window - Best Time to Buy and Sell Stock
-        public int BestTimeToBuy(){
+        public int BestTimeToBuy()
+        {
             int[] prices = { 7, 1, 5, 3, 6, 4 };
             int buy = 0;
             int sell = 1;
@@ -439,17 +441,93 @@ namespace Coding
                     {
                         maxP = profit;
                     }
-                   
+
                 }
-                 else
-                    {
-                        buy = sell;
-                       
-                    }
-                     sell++;
+                else
+                {
+                    buy = sell;
+
+                }
+                sell++;
             }
             return maxP;
+
+
         }
+
+        // Array - Replace Elements
+        public void ReplaceElements()
+        {
+            int[] arr = { 17, 18, 5, 4, 6, 1 };
+            int max = -1;
+
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                int newMax = Math.Max(arr[i], max);
+                arr[i] = max;
+                max = newMax;
+            }
+
+            // Brute Force
+            // for(int i=0 ;i<arr.Length;i++){
+
+            //     for(int j=i+1;j<arr.Length;j++){
+            //         if(arr[j] > max){
+            //             max = arr[j];
+            //         }
+
+            //     }
+            //         arr[i] = max;
+            //         max = -1;
+            // }
+        }
+
+        // Array - Is Subsequence
+        public bool IsSubsequence()
+        {
+            string s = "b";
+            string t = "abc";
+            Stack<char> stk = new();
+
+            for (int j = 0; j < s.Length; j++)
+            {
+                stk.Push(s[j]);
+            }
+
+            for (int i = t.Length - 1; i >= 0; i--)
+            {
+                if (stk.Count == 0)
+                {
+                    return true;
+                }
+                else if (t[i] == stk.Peek() && stk.Count > 0)
+                    stk.Pop();
+
+            }
+
+            return true;
+        }
+
+        // Two Pointer -Move Zero    
+        public void MoveZero()
+        {
+            int[] nums = { 0, 1, 0, 3, 12 };
+
+            int left = 0;
+            int right = 0;
+            int val;
+            for (; right < nums.Length; right++)
+            {
+                val = nums[right];
+                if (val != 0)
+                {
+                    nums[right] = 0;
+                    nums[left] = val;
+                    left++;
+                }
+            }
+        }
+
     }
 
 }
