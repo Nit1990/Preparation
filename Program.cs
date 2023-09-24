@@ -4,6 +4,7 @@ using Coding;
 using DesignPattern;
 using MediumLeetcode;
 using DataStructure;
+using GeeksArray;
 
 public class Program
 {
@@ -24,9 +25,9 @@ public class Program
         // obj.RemoveDuplicates(arr);
 
         // Search
-        BinarySearch obj = new BinarySearch();
+       // BinarySearch obj = new BinarySearch();
         // obj.BinarySearch();
-        obj.SearchInsert();
+        //obj.SearchInsert();
 
 
         // OOPS
@@ -35,7 +36,7 @@ public class Program
         // bcdc.show();
         // Coding
 
-        //GMS obj = new GMS();
+       // GMS obj = new GMS();
         //obj.NoOfCharacter();
         //obj.FirstNonRepetingCharbyArray();
         //obj.FirstNonRepetingCharbyDict();
@@ -53,7 +54,13 @@ public class Program
         // obj.ReplaceElements();
         //obj.IsSubsequence();
         //obj.MoveZero();
+       // obj.NumUniqueEmails();
+       // obj.CanPlaceFlowers();
 
+        // Geeks for geeks
+       // Arrays obj = new Arrays();
+        //obj.LeadersInArray();
+        
         // LinkedList
 
         // SingleLinkedList linkedList = new SingleLinkedList();
@@ -70,12 +77,13 @@ public class Program
 
         // Medium Leetcode
 
-        // Medium objMedium = new Medium();
+         Medium objMedium = new Medium();
         // var result = objMedium.GroupAnagrams();
         // objMedium.TopKFrequentElements();
         // objMedium.ProductExceptSelf();
         // objMedium.TwoSumArrayIsSorted();
         // objMedium.ThreeSum();
+        objMedium.MaxSubArraySum();
         // Strategy Design Pattern
 
         // The client code picks a concrete strategy and passes it to the

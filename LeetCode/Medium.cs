@@ -166,5 +166,31 @@ namespace MediumLeetcode
             }
 
         }
+
+        //Kadane's Algorithm - Sliding Window
+        public void MaxSubArraySum()
+        {
+            int[] arr = { 2, 3, 1, 2, 4, 3 };
+            int Length = arr.Length;
+
+            int localMax = 0;
+            int globalMax = int.MinValue;
+
+            for (int i = 0; i < Length; i++)
+            {
+                localMax = Math.Max(arr[i], localMax + arr[i]);
+
+                if (localMax > globalMax)
+                {
+                    globalMax = localMax;
+                }
+
+                if (localMax < 0)
+                {
+                    localMax = 0;
+                }
+            }
+            Console.WriteLine(globalMax);
+        }
     }
 }

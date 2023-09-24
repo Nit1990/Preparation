@@ -528,6 +528,51 @@ namespace Coding
             }
         }
 
-    }
+        // Array - Number of Unique Emails
+        public void NumUniqueEmails()
+        {
+            HashSet<string> uniqueEmail = new();
 
+            string[] emails = {
+                                "test.email+alex@leetcode.com",
+                                "test.e.mail+bob.cathy@leetcode.com",
+                                "testemail+david@lee.tcode.com"
+                                };
+
+            foreach (string email in emails)
+            {
+                string[] emailNames = email.Split('@');
+                string localName = emailNames[0];
+                string domainName = emailNames[1];
+
+                if (localName.Contains('+'))
+                {
+                    localName = localName.Split('+')[0];
+                }
+                localName = localName.Replace(".", String.Empty);
+                string forwardEmail = localName + "@" + domainName;
+                uniqueEmail.Add(forwardEmail);
+            }
+            Console.WriteLine(uniqueEmail.Count());
+        }
+
+        // Array - FLowerbed
+
+        public bool CanPlaceFlowers()
+        {
+            int[] arr = { 1, 0, 0, 0, 1, 0, 0 };
+            int N = arr.Length;
+            int n = 1;
+
+            for(int i = 0;i<arr.Length;i++){
+                if((i==0 || arr[i-1] == 0) && arr[i] == 0 && (i == arr.Length-1 || arr[i+1] == 0)){
+                    arr[i] = 1;
+                    n--;
+                }
+            }
+            return n<=0;
+
+        }
+
+    }
 }
