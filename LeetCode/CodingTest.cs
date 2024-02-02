@@ -103,7 +103,7 @@ namespace Coding
         public void PowerOf10()
         {
 
-            int num = 500;
+            int num = 1000;
 
             while (num % 10 == 0 && num != 0)
             {
@@ -233,9 +233,10 @@ namespace Coding
 
         }
 
-        // Remove Duplicate from Sorted Array
-        public int RemoveDuplicates(int[] nums)
+        // Remove Duplicate from Sorted Array - 1,1,2
+        public int RemoveDuplicates()
         {
+            int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
             int j = 0;
             for (int i = 0; i < nums.Length - 1; i++)
             {
@@ -245,6 +246,7 @@ namespace Coding
                 }
 
             }
+            // for last element
             nums[j++] = nums[nums.Length - 1];
             return j;
         }
@@ -402,8 +404,6 @@ namespace Coding
 
         // Two Sum
         public void TwoSum()
-
-
         {
             int[] nums = { 3, 2, 4 };
             int target = 6;
@@ -564,13 +564,15 @@ namespace Coding
             int N = arr.Length;
             int n = 1;
 
-            for(int i = 0;i<arr.Length;i++){
-                if((i==0 || arr[i-1] == 0) && arr[i] == 0 && (i == arr.Length-1 || arr[i+1] == 0)){
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if ((i == 0 || arr[i - 1] == 0) && arr[i] == 0 && (i == arr.Length - 1 || arr[i + 1] == 0))
+                {
                     arr[i] = 1;
                     n--;
                 }
             }
-            return n<=0;
+            return n <= 0;
 
         }
 

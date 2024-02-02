@@ -34,14 +34,18 @@ public class Program
         // Derived obj = new Derived();
         // Base bcdc = new Derived();
         // bcdc.show();
+        //   CompositionExample comp = new();
+        //   AssociationExample asso = new();
+        AggregationExample aggre = new();
+
         // Coding
 
-       // GMS obj = new GMS();
+        GMS obj = new();
         //obj.NoOfCharacter();
         //obj.FirstNonRepetingCharbyArray();
         //obj.FirstNonRepetingCharbyDict();
-        //obj.PowerOf10();
-        //obj.LongestCommonSubString();
+       // obj.PowerOf10();
+       // obj.LongestCommonSubString();
         //obj.SplitDictionary();
         // obj.ValidPalindrome();
         //obj.MaxArea();
@@ -49,6 +53,7 @@ public class Program
         //obj.FirstOccurence();
         //obj.IsAnagram();
         //obj.ContainsDuplicate();
+        obj.RemoveDuplicates();
         // obj.TwoSum();
         //obj.BestTimeToBuy();
         // obj.ReplaceElements();
@@ -83,7 +88,7 @@ public class Program
         // objMedium.ProductExceptSelf();
         // objMedium.TwoSumArrayIsSorted();
         // objMedium.ThreeSum();
-        objMedium.MaxSubArraySum();
+       // objMedium.MaxSubArraySum();
         // Strategy Design Pattern
 
         // The client code picks a concrete strategy and passes it to the
