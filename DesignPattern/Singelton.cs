@@ -1,20 +1,23 @@
-namespace Singelton{
+namespace DesignPattern
+{
+    public class Singelton
+    {
+        private static Singelton? Instance = null;
+        private static readonly Object _lock = new();
+        public static Singelton GetInstance()
+        {
 
-public class Singelton{
+            if (Instance == null)
+            {
+                lock (_lock)
+                {
 
-private static Singelton? Instance = null;
-private static readonly Object _lock = new Object();
-    public static Singelton GetInstance(){
-
-    if(Instance == null){
-        lock(_lock){
-
-        Instance = new Singelton();
+                    Instance = new Singelton();
+                }
+            }
+            return Instance;
         }
-    }
-    return Instance;
-}
-     private Singelton(){}
+        private Singelton() { }
 
     }
 }
