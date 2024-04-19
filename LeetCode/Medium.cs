@@ -170,7 +170,7 @@ namespace MediumLeetcode
         //Kadane's Algorithm - Sliding Window
         public void MaxSubArraySum()
         {
-            int[] arr = { 2, 3, 1, 2, 4, 3 };
+            int[] arr = { 2, 3, -1, 2, 4, 3 };
             int Length = arr.Length;
 
             int localMax = 0;
@@ -192,5 +192,80 @@ namespace MediumLeetcode
             }
             Console.WriteLine(globalMax);
         }
+
+        // Large File input test for Kadane
+        public void KadaneAlgorithm()
+        {
+
+            string file = @"C:\Users\002C27744\Downloads\fileInput.txt";
+            long count = 0;
+            string str = File.ReadAllText(file);
+            string[] value = str.Split(' ');
+
+            int[] ints = new int[value.Length];
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                ints[i] = int.Parse(value[i]);
+                count += int.Parse(value[i]);
+
+            }
+            Console.WriteLine(count);
+            //  MaxSubArraySum(ints);
+        }
+
+        /// <summary>
+        /// Dutch National Flag Algorithm
+        /// </summary>
+        public void Sort012()
+        {
+            string file = @"C:\Users\002C27744\Downloads\fileInput-Dutch.txt";
+            string str = File.ReadAllText(file);
+            string[] value = str.Split(' ');
+
+            //int[] arr = new int[value.Length];
+            //for (int i = 0; i < value.Length; i++)
+            //{
+            //    arr[i] = int.Parse(value[i]);
+            //   // count += int.Parse(value[i]);
+
+            //}
+             int[] arr = { 0, 0, 1, 0, 2 };
+
+            int low = 0;
+            int mid = 0;
+            int high = arr.Length - 1;
+
+            while (mid <= high)
+            {
+                switch (arr[mid])
+                {
+                    // Swap arr[low] and arr[mid]
+                    case 0:
+                        (arr[low], arr[mid]) = (arr[mid], arr[low]);
+                        low++;
+                        mid++;
+                        break;
+
+                    // increase mid by 1
+                    case 1:
+                        mid++;
+                        break;
+
+                    // swap arr[mid] and arr[high]
+                    case 2:
+                        (arr[mid], arr[high]) = (arr[high], arr[mid]);
+                        high--;
+                        break;
+                }
+            }
+
+            foreach(int i in arr)
+            {
+                Console.Write(i);
+            }
+
+        }
+
     }
 }

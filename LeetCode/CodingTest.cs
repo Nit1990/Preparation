@@ -236,7 +236,7 @@ namespace Coding
         // Remove Duplicate from Sorted Array - 1,1,2
         public int RemoveDuplicates()
         {
-            int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4,4 };
             int j = 0;
             for (int i = 0; i < nums.Length - 1; i++)
             {
@@ -513,10 +513,12 @@ namespace Coding
         {
             int[] nums = { 0, 1, 0, 3, 12 };
 
+            // left will take care of non zero numbers and right will take care of 0's
             int left = 0;
-            int right = 0;
+            
+
             int val;
-            for (; right < nums.Length; right++)
+            for (int right = 0; right < nums.Length; right++)
             {
                 val = nums[right];
                 if (val != 0)
@@ -557,7 +559,6 @@ namespace Coding
         }
 
         // Array - FLowerbed
-
         public bool CanPlaceFlowers()
         {
             int[] arr = { 1, 0, 0, 0, 1, 0, 0 };
@@ -573,6 +574,63 @@ namespace Coding
                 }
             }
             return n <= 0;
+
+        }
+
+        //Array - Largest Element
+
+        public void LargestElementArray()
+        {
+            int[] arr = { 2, 5, 1, 3, 0, 3, 13, 43, 2, 54, 33, 200 };
+
+            int end = arr.Length - 1;
+            int start = 0;
+            int max = 0;
+
+            while (start <= end)
+            {
+                if (arr[start] < arr[end] && max < arr[end])
+                {
+                    max = arr[end];
+                }
+                else if (arr[start] > arr[end] && max < arr[end])
+                {
+                    max = arr[start];
+                }
+                start++;
+                end--;
+
+            }
+            Console.WriteLine(max);
+        }
+
+        // Array - Second Smallest and Second Largest
+        public void SecondSmallestAndSecondLargestArray()
+        {
+            int[] arr = { 1, 2, 4, 7, 7, 5 };
+
+            Array.Sort(arr);
+            // THis wont work for sorted array
+            Console.WriteLine($"{arr[1]},{arr[arr.Length - 2]}");
+
+
+        }
+
+        public void IsArraySorted()
+        {
+            int[] arr = { 1, 2, 3, 4, 5 };
+            bool result = true;
+
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    result = false;
+                    break;
+
+                }
+            }
+            Console.WriteLine(result == false ? "False" : "True");
 
         }
 

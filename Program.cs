@@ -6,6 +6,7 @@ using MediumLeetcode;
 using DataStructure;
 using GeeksArray;
 using SOLID;
+using PrintPattern;
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public class Program
@@ -34,6 +35,7 @@ public class Program
 
 
         // OOPS
+
         // Derived obj = new Derived();
         // Base bcdc = new Derived();
         // bcdc.show();
@@ -60,18 +62,26 @@ public class Program
         //obj.FirstOccurence();
         //obj.IsAnagram();
         //obj.ContainsDuplicate();
-       // obj.RemoveDuplicates();
+        // obj.RemoveDuplicates();
         // obj.TwoSum();
         //obj.BestTimeToBuy();
         // obj.ReplaceElements();
         //obj.IsSubsequence();
-        //obj.MoveZero();
+        obj.MoveZero();
         // obj.NumUniqueEmails();
         // obj.CanPlaceFlowers();
+        //obj.LargestElementArray();
+        //obj.SecondSmallestAndSecondLargestArray();
+       // obj.IsArraySorted();
 
         // Geeks for geeks
+
         // Arrays obj = new Arrays();
         //obj.LeadersInArray();
+        // obj.RotateArrayOnePlace();
+        //obj.RotateArrayByKElementsUsingTempArray();
+        //obj.RotateArrayByKElementsLeft();
+        // obj.ReverseWordInString();
 
         // LinkedList
 
@@ -89,22 +99,24 @@ public class Program
 
         // Medium Leetcode
 
-        Medium objMedium = new Medium();
+        //  Medium objMedium = new Medium();
         // var result = objMedium.GroupAnagrams();
         // objMedium.TopKFrequentElements();
         // objMedium.ProductExceptSelf();
         // objMedium.TwoSumArrayIsSorted();
         // objMedium.ThreeSum();
         // objMedium.MaxSubArraySum();
+        //objMedium.KadaneAlgorithm();
+        //objMedium.Sort012();
 
         //Singelton.GetInstance();
         //Singelton.GetInstance();
 
         // Adapter 
-       // AdapterExample adapterExample = new();
-        
+        // AdapterExample adapterExample = new();
+
         // Factory
-        FactoryExample factoryExample = new();
+        // FactoryExample factoryExample = new();
 
         // Strategy Design Pattern
 
@@ -123,7 +135,16 @@ public class Program
         // context.SetStrategy(new ConcreteStrategyB());
         // context.DoSomeBusinessLogic();
 
+        // Pattern
 
+        //Pattern pattern = new Pattern();
+        // pattern.Pattern1();
+        // pattern.Pattern2();
+        //pattern.Pattern3();
+        // pattern.Pattern4();
+        //pattern.Pattern5();
+        // pattern.Pattern6();
+        // pattern.Pattern7();
     }
 
 }
