@@ -1,10 +1,13 @@
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections;
+using System.Text;
+
 namespace Coding
 {
     class GMS
     {
+        // String
         public void NoOfCharacter()
         {
 
@@ -121,6 +124,7 @@ namespace Coding
 
         }
 
+        // String - Longest common Sub String
         public void LongestCommonSubString()
         {
             string str = "aabbcccccccc";
@@ -236,7 +240,7 @@ namespace Coding
         // Remove Duplicate from Sorted Array - 1,1,2
         public int RemoveDuplicates()
         {
-            int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4,4 };
+            int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4 };
             int j = 0;
             for (int i = 0; i < nums.Length - 1; i++)
             {
@@ -251,11 +255,12 @@ namespace Coding
             return j;
         }
 
-        // Longest Common Prefix
-        public string Solution(string[] str)
+        // String - Longest Common Prefix
+        public void LongestCommonPrefix()
         {
+            string[] str = { "geek","geeksforgeeks", "geeks","geezer"};
 
-            if (str.Length == 0) return "";
+            if (str.Length == 0) Console.WriteLine(" ");
 
             string prefix = str[0];
 
@@ -267,7 +272,7 @@ namespace Coding
                     prefix = prefix.Substring(0, prefix.Length - 1);
                 }
             }
-            return prefix;
+            Console.WriteLine(prefix);
         }
 
         // Palindrome Number
@@ -298,7 +303,7 @@ namespace Coding
             return false;
         }
 
-        // Palindrome String
+        // String - Palindrome String
         public bool ValidPalindrome()
         {
 
@@ -333,7 +338,7 @@ namespace Coding
             return true;
         }
 
-        // Index of First Occurrence in string
+        // String - Index of First Occurrence in string
         public int FirstOccurence()
         {
             //   string haystack = "mississippi";
@@ -341,7 +346,7 @@ namespace Coding
             return default;
         }
 
-        // Valid Anagram - matching number of character in 2 string
+        // String - Valid Anagram - matching number of character in 2 string
         public void IsAnagram()
         {
             string s = "anagram";
@@ -515,7 +520,7 @@ namespace Coding
 
             // left will take care of non zero numbers and right will take care of 0's
             int left = 0;
-            
+
 
             int val;
             for (int right = 0; right < nums.Length; right++)
@@ -615,7 +620,8 @@ namespace Coding
 
 
         }
-
+        
+        // Array
         public void IsArraySorted()
         {
             int[] arr = { 1, 2, 3, 4, 5 };
@@ -634,5 +640,196 @@ namespace Coding
 
         }
 
+        public void UnionOfArray()
+        {
+            int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arr2 = { 2, 3, 4, 4, 5, 11, 12 };
+
+            SortedSet<int> set = new SortedSet<int>();
+
+            foreach (int i in arr1)
+            {
+                set.Add(i);
+            }
+            foreach (int i in arr2)
+            {
+                set.Add(i);
+            }
+
+            int[] arrResult = new int[set.Count];
+
+            int index = 0;
+
+            foreach (var item in set)
+            {
+                arrResult[index] = item;
+                index++;
+            }
+        }
+
+        public void AppearOnceInArray()
+        {
+            int[] arr = { 4, 1, 2, 1, 2 };
+
+            HashSet<int> set = new HashSet<int>();
+
+            foreach (int i in arr)
+            {
+                if (set.Contains(i))
+                {
+                    set.Remove(i);
+                }
+                else
+                {
+                    set.Add(i);
+                }
+            }
+            int value = set.Single();
+            Console.WriteLine(value);
+
+        }
+
+        public void MaximumOneInArray()
+        {
+            int[] arr = { 1, 1, 0, 1, 1, 1 };
+
+            int count = 0;
+
+            foreach (int i in arr)
+            {
+                if (i == 1)
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                }
+            }
+            Console.WriteLine(count);
+        }
+
+        public void LongestSubArray()
+        {
+            int[] arr = { 2, 3, -5, 1, 9 };
+
+            int localMax = 0;
+            int globalMax = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                localMax = Math.Max(localMax + arr[i], arr[i]);
+
+                if(localMax > globalMax)
+                {
+                    globalMax = localMax;
+                }
+                if(localMax < 0)
+                {
+                    localMax = 0;
+                }
+
+            }
+            Console.WriteLine(globalMax);
+        }
+    
+        public void ReverseVowels()
+        {
+            StringBuilder s = new("hello");
+
+            int start = 0;
+            int end = s.Length - 1;
+
+            while(start < end)
+            {
+                if (!IsVowel(s[start]))
+                {
+                    start++;
+                    continue;
+                }
+                if (!IsVowel(s[end]))
+                {
+                    end--;
+                    continue;
+                }
+
+                // Swap
+                (s[end], s[start]) = (s[start], s[end]);
+
+                start++;
+                end--;
+            }
+
+
+
+        }
+
+        private static bool IsVowel(char c)
+        {
+            return c == 'a' || c == 'A' || c == 'e'
+                || c == 'E' || c == 'i' || c == 'I'
+                || c == 'o' || c == 'O' || c == 'u'
+                || c == 'U';
+        }
+
+        public void RearrangebySign()
+        {
+            int[] arr = { 1,2,-3,-1,-2,3 };
+            int n = arr.Length;
+
+            int[] positive = new int[n / 2];
+            int[] negative = new int[n / 2];
+
+            int positiveIndex = 0;
+            int negativeIndex = 0;
+
+            // Separate positive and negative elements into separate arrays
+            foreach (int num in arr)
+            {
+                if (num > 0)
+                {
+                    positive[positiveIndex++] = num;
+                   
+                }
+                else
+                {
+                    negative[negativeIndex++] = num;
+                }
+            }
+
+            // Merge positive and negative arrays alternatively
+            int arrIndex = 0;
+            for (int i = 0; i < positiveIndex; i++)
+            {
+                arr[arrIndex++] = positive[i];
+                arr[arrIndex++] = negative[i];
+            }
+
+
+
+
+        }
+    
+        // String - Reverse Words in a String
+        public void ReverseWords()
+        {
+            string s = "a good   example";
+            string b = s.Trim();
+
+            string[] str = s.Split(' ',StringSplitOptions.RemoveEmptyEntries);
+
+            int start = 0;
+            int end = str.Length-1;
+
+            while (start < end)
+            {
+                (str[start], str[end]) = (str[end], str[start]);
+                start++;
+                end--;
+            }
+            string a = string.Join(' ', str);
+
+            Console.WriteLine(a);
+        }
     }
 }

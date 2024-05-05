@@ -1,4 +1,4 @@
-namespace DataStructure
+namespace ConsoleApp.DataStructure.Stack
 {
 
     public class StackUsingLinkedList
@@ -18,7 +18,7 @@ namespace DataStructure
         // Initialize top with null
         public StackUsingLinkedList()
         {
-            this.top = null;
+            top = null;
 
         }
 
@@ -45,7 +45,7 @@ namespace DataStructure
         {
             if (!IsEmpty())
             {
-                Console.WriteLine(this.top.data);
+                Console.WriteLine(top.data);
             }
             else
             {
@@ -92,29 +92,31 @@ namespace DataStructure
         // Valid Parentheses
         public bool ValidParentheses(string s)
         {
-            foreach(char c in s){
-                if(c == '}')
+            foreach (char c in s)
+            {
+                if (c == '}')
                 {
-                    if(IsEmpty() || Convert.ToChar(this.Pop()) != '{')
-                    return false;
+                    if (IsEmpty() || Convert.ToChar(Pop()) != '{')
+                        return false;
                 }
-                else if(c == ')')
+                else if (c == ')')
                 {
-                    if(IsEmpty() || Convert.ToChar(this.Pop()) != '(')
-                    return false;
+                    if (IsEmpty() || Convert.ToChar(Pop()) != '(')
+                        return false;
                 }
-                else if(c == ']')
+                else if (c == ']')
                 {
-                    if(IsEmpty() || Convert.ToChar(this.Pop()) != '[')
-                    return false;
+                    if (IsEmpty() || Convert.ToChar(Pop()) != '[')
+                        return false;
                 }
-                else {
-                    this.Push(c);
+                else
+                {
+                    Push(c);
                 }
             }
-            var result = this.IsEmpty();
-            return this.IsEmpty();
-            
+            var result = IsEmpty();
+            return IsEmpty();
+
 
         }
 

@@ -230,11 +230,11 @@ namespace MediumLeetcode
             //   // count += int.Parse(value[i]);
 
             //}
-             int[] arr = { 0, 0, 1, 0, 2 };
+            int[] arr = { 0, 0, 1, 0, 2 };
 
-            int low = 0;
-            int mid = 0;
-            int high = arr.Length - 1;
+            int low = 0; // used to track 0
+            int mid = 0; // used to track 1
+            int high = arr.Length - 1; // used to track 2
 
             while (mid <= high)
             {
@@ -260,7 +260,7 @@ namespace MediumLeetcode
                 }
             }
 
-            foreach(int i in arr)
+            foreach (int i in arr)
             {
                 Console.Write(i);
             }

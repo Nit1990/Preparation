@@ -3,10 +3,12 @@ using OOPS;
 using Coding;
 using DesignPattern;
 using MediumLeetcode;
-using DataStructure;
 using GeeksArray;
 using SOLID;
 using PrintPattern;
+using DataStructure.Stack;
+using Sorting;
+using DataStructure.Tree;
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public class Program
@@ -16,17 +18,6 @@ public class Program
     // Driver Code
     public static void Main()
     {
-
-        // Palindrome obj = new Palindrome();
-        //obj.IsPalindrome(121);
-
-        // LongestCommonPrefix obj = new LongestCommonPrefix();
-        // string[]  strs = {"flower","flow","flight"};
-        // obj.Solution(strs);
-
-        // int[] arr = new int[]{1,1,2};
-        // Solution obj = new Solution();
-        // obj.RemoveDuplicates(arr);
 
         // Search
         // BinarySearch obj = new BinarySearch();
@@ -67,13 +58,20 @@ public class Program
         //obj.BestTimeToBuy();
         // obj.ReplaceElements();
         //obj.IsSubsequence();
-        obj.MoveZero();
+        obj.LongestCommonPrefix();
+        // obj.MoveZero();
         // obj.NumUniqueEmails();
         // obj.CanPlaceFlowers();
         //obj.LargestElementArray();
         //obj.SecondSmallestAndSecondLargestArray();
-       // obj.IsArraySorted();
-
+        // obj.IsArraySorted();
+        //obj.UnionOfArray();
+        // obj.AppearOnceInArray();
+        //  obj.MaximumOneInArray();
+        //obj.LongestSubArray();
+        //obj.ReverseVowels();
+        //obj.RearrangebySign();
+        //obj.ReverseWords();
         // Geeks for geeks
 
         // Arrays obj = new Arrays();
@@ -97,9 +95,24 @@ public class Program
         // StackUsingLinkedList stack = new StackUsingLinkedList();
         // stack.ValidParentheses("{()[]");
 
+        // Stack using Array
+
+        //StackUsingArray stack = new StackUsingArray();
+        //stack.push(7);
+        //stack.push(8);
+        //stack.Show();
+        //stack.pop();
+        //stack.Show();
+
+        // Tree
+        Tree tree = new Tree();
+        tree.Insert(5);
+        tree.Insert(3);
+        tree.Insert(6);
+
         // Medium Leetcode
 
-        //  Medium objMedium = new Medium();
+        Medium objMedium = new Medium();
         // var result = objMedium.GroupAnagrams();
         // objMedium.TopKFrequentElements();
         // objMedium.ProductExceptSelf();
@@ -108,6 +121,8 @@ public class Program
         // objMedium.MaxSubArraySum();
         //objMedium.KadaneAlgorithm();
         //objMedium.Sort012();
+        // objMedium.BuyAndSell();       
+       
 
         //Singelton.GetInstance();
         //Singelton.GetInstance();
@@ -145,6 +160,10 @@ public class Program
         //pattern.Pattern5();
         // pattern.Pattern6();
         // pattern.Pattern7();
+
+        // Sorting
+      //  _ = new InsertionSort();
+       // _ = new QuickSort();
     }
 
 }
