@@ -58,7 +58,7 @@ public class Program
         //obj.BestTimeToBuy();
         // obj.ReplaceElements();
         //obj.IsSubsequence();
-        obj.LongestCommonPrefix();
+        // obj.LongestCommonPrefix();
         // obj.MoveZero();
         // obj.NumUniqueEmails();
         // obj.CanPlaceFlowers();
@@ -72,6 +72,7 @@ public class Program
         //obj.ReverseVowels();
         //obj.RearrangebySign();
         //obj.ReverseWords();
+        obj.FrequencyOfLetter();
         // Geeks for geeks
 
         // Arrays obj = new Arrays();

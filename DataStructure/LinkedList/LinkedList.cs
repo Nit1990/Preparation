@@ -15,7 +15,7 @@ namespace DataStructure.LinkedList
     {
         public Node? head;
 
-       
+
         // Add Element at front
         public void push_front(int newElement)
         {
@@ -37,17 +37,19 @@ namespace DataStructure.LinkedList
             {
                 head = newNode; // if linkedList is empty then make new node as head. make the node as first node
             }
-            else
+            else // traverse the LinkedList to reach end of LinkedList
             {
                 Node temp = new Node();
                 temp = head;
                 while (temp.Next != null)
+                {
                     temp = temp.Next;
+                }
                 temp.Next = newNode;
 
             }
         }
-       
+
         // Reverse LinkedList
         public void reverseList()
         {
@@ -71,8 +73,54 @@ namespace DataStructure.LinkedList
             }
 
         }
+
+        // Floyd's cycle-finding algorithm to detect Loop in LinkedList
+        public void HasLoop()
+        {
+
+            if (head == null || head.Next == null)
+            {
+                Console.Write("False");
+            }
+            Node slow = head;
+            Node fast = head.Next;
+
+            while (fast != null && fast.Next != null)
+            {
+                if (slow == fast)
+                {
+                    Console.Write("True");
+                }
+                slow = slow.Next;
+                fast = fast.Next.Next;
+            }
+            Console.WriteLine("False");
+        }
+
+        // Floyd's cycle-finding algorithm to find middle node of Linkedlist, check How to initialize fast pointer
+        public void GetMiddleOfLinkedList()
+        {
+            if (head == null || head.Next == null)
+            {
+                Console.WriteLine(value: head?.Data);
+            }
+
+            Node? slow = head;
+            Node? fast = head;
+
+            while (fast != null && fast.Next != null)
+            {
+                fast = fast.Next.Next;
+                slow = slow.Next;
+            }
+
+            Console.WriteLine(value: slow?.Data);
+        }
+    
+        public void IntersectionOfTwoLinkedList()
+        {
+
+        }
     }
-
-
 
 }

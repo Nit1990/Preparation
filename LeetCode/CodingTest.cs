@@ -831,5 +831,33 @@ namespace Coding
 
             Console.WriteLine(a);
         }
+    
+        // String - find the frequency of each character
+        // and return string with combination of char and its fequency
+        public void FrequencyOfLetter()
+        {
+            string s = "aaaabbbccc";
+            Dictionary<char, int> dict = new();
+
+            foreach (char c in s)
+            {
+                if (dict.ContainsKey(c))
+                {
+                    dict[c]++;
+                }
+                else
+                {
+                    dict.Add(c, 1);
+                }
+            }
+
+            StringBuilder str = new StringBuilder();
+
+            foreach (KeyValuePair<char, int> item in dict)
+            {
+                str.Append(Convert.ToString(item.Key)+item.Value);
+            }
+           
+        }
     }
 }
