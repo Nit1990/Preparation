@@ -42,7 +42,7 @@ public class Program
 
         GMS obj = new();
         //obj.NoOfCharacter();
-        //obj.FirstNonRepetingCharbyArray();
+       // obj.FirstNonRepetingCharbyArray();
         //obj.FirstNonRepetingCharbyDict();
         // obj.PowerOf10();
         // obj.LongestCommonSubString();
@@ -59,10 +59,12 @@ public class Program
         // obj.ReplaceElements();
         //obj.IsSubsequence();
         // obj.LongestCommonPrefix();
+       // obj.LongestCommonPrefix();
         // obj.MoveZero();
         // obj.NumUniqueEmails();
         // obj.CanPlaceFlowers();
         //obj.LargestElementArray();
+        obj.LargestElementArrayForLoop();
         //obj.SecondSmallestAndSecondLargestArray();
         // obj.IsArraySorted();
         //obj.UnionOfArray();

@@ -7,7 +7,7 @@ namespace Coding
 {
     class GMS
     {
-        // String
+        // String - No of Character
         public void NoOfCharacter()
         {
 
@@ -125,6 +125,7 @@ namespace Coding
         }
 
         // String - Longest common Sub String
+        // Take three variable, count,index and Max
         public void LongestCommonSubString()
         {
             string str = "aabbcccccccc";
@@ -257,7 +258,7 @@ namespace Coding
 
         // String - Longest Common Prefix
         public void LongestCommonPrefix()
-        {
+        { 
             string[] str = { "geek","geeksforgeeks", "geeks","geezer"};
 
             if (str.Length == 0) Console.WriteLine(" ");
@@ -266,9 +267,10 @@ namespace Coding
 
             for (int i = 1; i < str.Length; i++)
             {
-
+                // IndexOf will fing the prefix in str[i]
                 while (str[i].IndexOf(prefix) != 0)
                 {
+                    // Decrease prefix by 1
                     prefix = prefix.Substring(0, prefix.Length - 1);
                 }
             }
@@ -422,7 +424,8 @@ namespace Coding
                 {
                     Console.WriteLine("{0} {1}", dict[diff], i);
                 }
-                dict[nums[i]] = i;
+                // Saving Index
+                dict[nums[i]] = i; 
             }
 
 
@@ -460,7 +463,7 @@ namespace Coding
 
         }
 
-        // Array - Replace Elements
+        // Array - Replace Elements with greatest element on Right Side
         public void ReplaceElements()
         {
             int[] arr = { 17, 18, 5, 4, 6, 1 };
@@ -608,6 +611,24 @@ namespace Coding
             }
             Console.WriteLine(max);
         }
+
+        public void LargestElementArrayForLoop()
+        {
+            int[] arr = { 2, 5, 1, 3, 0, 3, 13, 43, 2, 54, 33, 200 };
+
+            
+            int max = 0;
+
+          for(int i = 0; i< arr.Length;i++)
+          {
+               if(arr[i] > max){
+                max = arr[i];
+               }
+          }
+           Console.WriteLine(max);
+            }
+           
+        
 
         // Array - Second Smallest and Second Largest
         public void SecondSmallestAndSecondLargestArray()
