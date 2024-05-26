@@ -490,11 +490,12 @@ namespace Coding
             // }
         }
 
-        // Array - Is Subsequence
+        // String - Is Subsequence, relative order should be maintained
         public bool IsSubsequence()
         {
-            string s = "b";
-            string t = "abc";
+            string s = "abc";
+            string t = "ahbgdc"; // Yes
+            string u = "ahcgdb"; // No
             Stack<char> stk = new();
 
             for (int j = 0; j < s.Length; j++)
@@ -513,7 +514,7 @@ namespace Coding
 
             }
 
-            return true;
+            return false;
         }
 
         // Two Pointer -Move Zero    
@@ -569,7 +570,7 @@ namespace Coding
         // Array - FLowerbed
         public bool CanPlaceFlowers()
         {
-            int[] arr = { 1, 0, 0, 0, 1, 0, 0 };
+            int[] arr = { 1, 0, 0, 0, 1, 0, 1 };
             int N = arr.Length;
             int n = 1;
 
@@ -601,7 +602,7 @@ namespace Coding
                 {
                     max = arr[end];
                 }
-                else if (arr[start] > arr[end] && max < arr[end])
+                else if (arr[start] > arr[end] && max < arr[start])
                 {
                     max = arr[start];
                 }
@@ -690,10 +691,10 @@ namespace Coding
 
         public void AppearOnceInArray()
         {
-            int[] arr = { 4, 1, 2, 1, 2 };
+            int[] arr = { 4, 1, 2, 1, 2 ,3};
 
             HashSet<int> set = new HashSet<int>();
-
+           
             foreach (int i in arr)
             {
                 if (set.Contains(i))
@@ -793,6 +794,7 @@ namespace Coding
                 || c == 'U';
         }
 
+        // Array - Alternate positive and negative number.
         public void RearrangebySign()
         {
             int[] arr = { 1,2,-3,-1,-2,3 };
@@ -880,5 +882,113 @@ namespace Coding
             }
            
         }
+   
+        public int PalindromicArray()
+        {
+            int[] arr = { 111, 222, 333, 444 };
+            foreach (int i in arr)
+            {
+                if (!isPalindrome(i))
+                {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+        private bool isPalindrome(int i)
+        {
+            int num = i;
+            int reverse = 0;
+            while (num > 0)
+            {
+                int reminder = num % 10;
+                reverse = reverse * 10 + reminder;
+                num = num / 10;
+            }
+
+            if (num == reverse)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
+        public string isSubset()
+        {
+            int[] a1 = { 11, 7, 1, 13, 21, 3, 7, 3 };
+            int[] a2 = { 11, 3, 7, 1, 7 };
+            //Your code here
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            // Count occurrences of elements in a1
+            foreach (int i in a2)
+            {
+                if (dict.ContainsKey(i))
+                {
+                    dict[i]++;
+                }
+                else
+                {
+                    dict.Add(i, 1);
+                }
+            }
+
+            // Check if elements in a2 are present in a1 and decrement their count
+            foreach (int j in a1)
+            {
+                if (dict.ContainsKey(j))
+                {
+                    dict[j]--;
+                }
+               
+            }
+
+            // Check if all elements in a2 have been accounted for in a1
+            foreach (var kvp in dict)
+            {
+                if (kvp.Value > 0)
+                {
+                    return "No";
+                }
+            }
+
+            return "Yes";
+        }
+    
+        // Need to check
+        public void MinimumJump()
+        {
+            int[] arr = { 1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9 };
+
+            int count = 0;
+
+            for (int i = 0; i < arr.Length;)
+            {
+                i = arr[i];
+                count++;
+            }
+            Console.WriteLine(count);
+        }
+    
+        public void IsStringRotation()
+        {
+            string s1 = "mightandmagic";
+            string s2 = "andmagicmigth";
+          
+            if (s1.Length != s2.Length || s1.Length == 0)
+            {
+                Console.Write("Not");
+            }
+
+            string b = s1 + s1;
+            bool isPresent = b.Contains(s2);
+
+        }
+
+        // DP
+        public void LongestCommonSubsequence()
+        {
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using PrintPattern;
 using DataStructure.Stack;
 using Sorting;
 using DataStructure.Tree;
+using ConsoleApp.DesignPattern;
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public class Program
@@ -42,7 +43,7 @@ public class Program
 
         GMS obj = new();
         //obj.NoOfCharacter();
-       // obj.FirstNonRepetingCharbyArray();
+        // obj.FirstNonRepetingCharbyArray();
         //obj.FirstNonRepetingCharbyDict();
         // obj.PowerOf10();
         // obj.LongestCommonSubString();
@@ -57,14 +58,14 @@ public class Program
         // obj.TwoSum();
         //obj.BestTimeToBuy();
         // obj.ReplaceElements();
-        //obj.IsSubsequence();
+        // obj.IsSubsequence();
+        //  obj.MoveZero();
         // obj.LongestCommonPrefix();
-       // obj.LongestCommonPrefix();
         // obj.MoveZero();
         // obj.NumUniqueEmails();
         // obj.CanPlaceFlowers();
         //obj.LargestElementArray();
-        obj.LargestElementArrayForLoop();
+        //  obj.LargestElementArrayForLoop();
         //obj.SecondSmallestAndSecondLargestArray();
         // obj.IsArraySorted();
         //obj.UnionOfArray();
@@ -74,15 +75,23 @@ public class Program
         //obj.ReverseVowels();
         //obj.RearrangebySign();
         //obj.ReverseWords();
-        obj.FrequencyOfLetter();
+        // obj.FrequencyOfLetter();
+        //obj.PalindromicArray();
+        // obj.isSubset();
+        //  obj.IsStringRotation();
+       // obj.LongestCommonSubsequence();
+
         // Geeks for geeks
 
-        // Arrays obj = new Arrays();
+        //  Arrays obj = new Arrays();
         //obj.LeadersInArray();
         // obj.RotateArrayOnePlace();
         //obj.RotateArrayByKElementsUsingTempArray();
         //obj.RotateArrayByKElementsLeft();
         // obj.ReverseWordInString();
+        //  obj.MinimumJump();
+        // obj.LongestConsecutiveSequenceInArray();
+        //  obj.RemoveDuplicateFromSortedArray();
 
         // LinkedList
 
@@ -108,10 +117,10 @@ public class Program
         //stack.Show();
 
         // Tree
-        Tree tree = new Tree();
-        tree.Insert(5);
-        tree.Insert(3);
-        tree.Insert(6);
+        //Tree tree = new Tree();
+        //tree.Insert(5);
+        //tree.Insert(3);
+        //tree.Insert(6);
 
         // Medium Leetcode
 
@@ -125,7 +134,7 @@ public class Program
         //objMedium.KadaneAlgorithm();
         //objMedium.Sort012();
         // objMedium.BuyAndSell();       
-       
+
 
         //Singelton.GetInstance();
         //Singelton.GetInstance();
@@ -135,6 +144,9 @@ public class Program
 
         // Factory
         // FactoryExample factoryExample = new();
+
+        //Decorator
+        Decorator objDecoration = new();
 
         // Strategy Design Pattern
 
@@ -155,7 +167,7 @@ public class Program
 
         // Pattern
 
-        //Pattern pattern = new Pattern();
+       // Pattern pattern = new Pattern();
         // pattern.Pattern1();
         // pattern.Pattern2();
         //pattern.Pattern3();

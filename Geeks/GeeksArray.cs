@@ -7,9 +7,9 @@ namespace GeeksArray
         {
             int[] arr = { 16, 17, 4, 3, 5, 2 };
             int N = 6;
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-
+          
             int j = N - 1;
+
             List<int> list = new List<int>();
 
 
@@ -33,9 +33,10 @@ namespace GeeksArray
             return arr1;
         }
 
-        public void RotateArrayOnePlace()
+        // Anti Clock-wise
+        public void RotateArrayOnePlaceLeft()
         {
-            int[] arr = { 1, 2, 3, 4, 5, 6 }; // {2,3,4,5,6,1}
+            int[] arr = { 1, 2, 3, 4, 5 }; // {2,3,4,5,1}
 
             int temp = arr[0];
 
@@ -44,6 +45,20 @@ namespace GeeksArray
                 arr[i - 1] = arr[i];
             }
             arr[arr.Length - 1] = temp;
+
+        }
+
+        //Clock-wise
+        public void RotateArrayOnePlaceRight()
+        {
+            int[] arr = { 1, 2, 3, 4, 5 }; // {5,1,2,3,4}
+
+            int temp = arr[arr.Length - 1];
+            for (int i = arr.Length - 2; i >= 0; i--)
+            {
+                arr[i + 1] = arr[i];
+            }
+            arr[0] = temp;
 
         }
 
@@ -121,6 +136,70 @@ namespace GeeksArray
             }
         }
 
+        public void LongestConsecutiveSequenceInArray()
+        {
+            int[] arr = { 100, 200, 1, 3, 2, 4 };
+
+            // Insertion Sort
+            Sort(arr);
+
+            int lstSmall = int.MinValue;
+            int count = 0;
+            int longest = 1;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] - 1 == lstSmall)
+                {
+                    count++;
+                    lstSmall = arr[i];
+                }
+                else if (arr[i] != lstSmall)
+                {
+                    count = 1;
+                    lstSmall = arr[i];
+                }
+                longest = Math.Max(longest, count);
+            }
+        }
+        private void Sort(int[] arr)
+        {
+            // Insertion Sort
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                // Current Element
+                int key = arr[i];
+                int j = i - 1;
+
+                while (j >= 0 && arr[j] > key)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+                arr[j + 1] = key;
+
+
+            }
+        }
+ 
+        public void RemoveDuplicateFromSortedArray()
+        {
+            int j = 0;
+            int[] arr = {1,2,2,4 };
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] != arr[j])
+                {
+                    j++;
+                    arr[j] = arr[i];
+                    
+
+
+                }
+            }
+            Console.WriteLine(j + 1);
+        }
     }
 
 }
