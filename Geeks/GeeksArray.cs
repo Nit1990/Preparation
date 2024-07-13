@@ -3,6 +3,7 @@ namespace GeeksArray
 
     public class Arrays
     {
+        // An element of array is a leader if it is greater than or equal to all the elements to its right side
         public int[] LeadersInArray()
         {
             int[] arr = { 16, 17, 4, 3, 5, 2 };
@@ -128,9 +129,7 @@ namespace GeeksArray
         {
             while (start <= end)
             {
-                int temp = arr[start];
-                arr[start] = arr[end];
-                arr[end] = temp;
+                (arr[end], arr[start]) = (arr[start], arr[end]);
                 start++;
                 end--;
             }
@@ -142,6 +141,7 @@ namespace GeeksArray
 
             // Insertion Sort
             Sort(arr);
+            // 1,2,3,4,100,200
 
             int lstSmall = int.MinValue;
             int count = 0;
@@ -193,8 +193,6 @@ namespace GeeksArray
                 {
                     j++;
                     arr[j] = arr[i];
-                    
-
 
                 }
             }

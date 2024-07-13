@@ -10,6 +10,8 @@ using DataStructure.Stack;
 using Sorting;
 using DataStructure.Tree;
 using ConsoleApp.DesignPattern;
+using HackerRank;
+using BenchmarkDotNet.Running;
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public class Program
@@ -19,7 +21,7 @@ public class Program
     // Driver Code
     public static void Main()
     {
-
+        
         // Search
         // BinarySearch obj = new BinarySearch();
         // obj.BinarySearch();
@@ -41,7 +43,7 @@ public class Program
 
         // Coding
 
-        GMS obj = new();
+        //GMS obj = new();
         //obj.NoOfCharacter();
         // obj.FirstNonRepetingCharbyArray();
         //obj.FirstNonRepetingCharbyDict();
@@ -79,12 +81,12 @@ public class Program
         //obj.PalindromicArray();
         // obj.isSubset();
         //  obj.IsStringRotation();
-       // obj.LongestCommonSubsequence();
+        // obj.LongestCommonSubsequence();
 
         // Geeks for geeks
 
         //  Arrays obj = new Arrays();
-        //obj.LeadersInArray();
+        // obj.LeadersInArray();
         // obj.RotateArrayOnePlace();
         //obj.RotateArrayByKElementsUsingTempArray();
         //obj.RotateArrayByKElementsLeft();
@@ -124,7 +126,7 @@ public class Program
 
         // Medium Leetcode
 
-        Medium objMedium = new Medium();
+        // Medium objMedium = new Medium();
         // var result = objMedium.GroupAnagrams();
         // objMedium.TopKFrequentElements();
         // objMedium.ProductExceptSelf();
@@ -133,7 +135,14 @@ public class Program
         // objMedium.MaxSubArraySum();
         //objMedium.KadaneAlgorithm();
         //objMedium.Sort012();
-        // objMedium.BuyAndSell();       
+        // objMedium.BuyAndSell();
+        // objMedium.CanJump();
+
+        //HackerRank
+        //HackerRank.HackerRank obj = new();
+        //obj.GetExcelColumnName();
+
+        //var summary = BenchmarkRunner.Run<HackerRank.HackerRank>();
 
 
         //Singelton.GetInstance();

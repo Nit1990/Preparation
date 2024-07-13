@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Text;
+using BenchmarkDotNet.Disassemblers;
 
 namespace Coding
 {
@@ -153,6 +154,37 @@ namespace Coding
             Console.WriteLine($"{index},{index + max - 1}");
         }
 
+        public void LengthOfLongestSubstringWithOutRepeatingCharacter()
+        {
+            //  string str = "abcabcbb"; //abc
+            string str = "abcabcbb";
+            int maxLength = 0;
+            // left pointer
+            int left = 0; 
+
+            HashSet<char> set = new HashSet<char>();
+
+            for (int right = 0; right < str.Length; right++)
+            {
+                // If the character is already in the set, remove characters from the left until it's not
+
+                while (set.Contains(str[right]))
+                {
+                    // Remove from left
+                    set.Remove(str[left]);
+                    left++;
+                }
+                // Add character
+                set.Add(str[right]);
+
+                // update max length
+                maxLength = Math.Max(maxLength, right - left+1);
+
+            }
+
+
+
+        }
         public void SplitDictionary()
         {
             string str = "A=1&B=1&C=1&A=2";
@@ -226,16 +258,6 @@ namespace Coding
             watch.Stop();
             Console.WriteLine(watch.ElapsedMilliseconds);
             Console.WriteLine(Area);
-        }
-
-        public void LengthOfLongestSubstring()
-        {
-            //  string str = "abcabcbb"; //abc
-            HashSet<char> set = new HashSet<char>();
-
-
-
-
         }
 
         // Remove Duplicate from Sorted Array - 1,1,2
@@ -436,31 +458,26 @@ namespace Coding
         public int BestTimeToBuy()
         {
             int[] prices = { 7, 1, 5, 3, 6, 4 };
-            int buy = 0;
-            int sell = 1;
-            int maxP = 0;
+            int minPrice = prices[0];
+            int maxProfit = 0;
+            int i = 1;
 
-            while (sell < prices.Length)
+            while (i < prices.Length)
             {
-                if (prices[sell] > prices[buy])
-                {
-                    int profit = prices[sell] - prices[buy];
-                    if (maxP < profit)
-                    {
-                        maxP = profit;
-                    }
+                // Update minimum price encountered so far
+                if (prices[i] < minPrice)
+                    minPrice = prices[i];
 
-                }
-                else
-                {
-                    buy = sell;
+                // Calculate potential profit if selling on the current day
+                int currentProfit = prices[i] - minPrice;
 
-                }
-                sell++;
+                // Update maximum profit if current profit is higher
+                if (currentProfit > maxProfit)
+                    maxProfit = currentProfit;
+
+                i++;
             }
-            return maxP;
-
-
+            return maxProfit;
         }
 
         // Array - Replace Elements with greatest element on Right Side
@@ -953,21 +970,6 @@ namespace Coding
             }
 
             return "Yes";
-        }
-    
-        // Need to check
-        public void MinimumJump()
-        {
-            int[] arr = { 1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9 };
-
-            int count = 0;
-
-            for (int i = 0; i < arr.Length;)
-            {
-                i = arr[i];
-                count++;
-            }
-            Console.WriteLine(count);
         }
     
         public void IsStringRotation()

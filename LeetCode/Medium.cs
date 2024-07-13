@@ -267,5 +267,30 @@ namespace MediumLeetcode
 
         }
 
+        public void CanJump()
+        {
+            int temp = 1;
+            temp = +1;
+            Console.WriteLine(temp);
+
+            int[] nums = { 2, 3, 1, 1, 4 };
+         
+            int jump = 0;
+            for (int i = 0; i < nums.Length;i++)
+            {
+                if (i > jump)
+                {
+                    Console.WriteLine("False");
+                }
+                jump = Math.Max(jump, i+nums[i]);
+
+                if (jump >= nums.Length - 1)
+                {
+                    Console.WriteLine("true");
+                }
+               
+            }
+            Console.WriteLine("False");
+        }
     }
 }
