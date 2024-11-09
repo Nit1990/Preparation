@@ -15,6 +15,18 @@ namespace DataStructure.LinkedList
     {
         public Node? head;
 
+        // Traversing Linked List
+        public void Traversing(){
+            if(head == null){
+                Console.WriteLine("List is Empty");
+                return;
+            }
+            Node p = head;
+            while(p != null){
+                Console.WriteLine(p.Data);
+                p = p.Next;
+            }
+        }
 
         // Add Element at front
         public void push_front(int newElement)
@@ -116,7 +128,30 @@ namespace DataStructure.LinkedList
 
             Console.WriteLine(value: slow?.Data);
         }
-    
+        
+        public void BubbleSortExData(){
+            Node end;
+            Node p;
+            Node q;
+
+            for(end = null; end != head.Next; end = p){
+                for(p = head; p.Next != end; p=p.Next){
+                  q = p.Next;
+                  if(p.Data > q.Data){
+                    (p.Data,q.Data) = (q.Data,p.Data);
+                  }
+                }
+            }
+
+             
+        }
+
+        public void MergeLinkedList(SingleLinkedList list)
+        {
+           Node p1 = this.head;
+           Node p2 = list.head;
+           Node startM;
+        }
         public void IntersectionOfTwoLinkedList()
         {
 

@@ -7,6 +7,7 @@ using GeeksArray;
 using SOLID;
 using PrintPattern;
 using DataStructure.Stack;
+using DataStructure.LinkedList;
 using Sorting;
 using DataStructure.Tree;
 using ConsoleApp.DesignPattern;
@@ -97,11 +98,20 @@ public class Program
 
         // LinkedList
 
-        // SingleLinkedList linkedList = new SingleLinkedList();
-        // linkedList.push_back(10);
-        // linkedList.push_back(20);
-        // linkedList.push_back(30);
-        // linkedList.push_back(40);
+         SingleLinkedList linkedList = new SingleLinkedList();
+         linkedList.push_back(5);
+         linkedList.push_back(7);
+         linkedList.push_back(9);
+         linkedList.push_back(15);
+         SingleLinkedList list2 = new SingleLinkedList();
+         list2.push_back(4);
+         list2.push_back(8);
+         list2.push_back(10);
+         list2.push_back(30);
+         list2.push_back(80);
+        linkedList.MergeLinkedList(list2);
+
+        // linkedList.BubbleSortExData();
         // linkedList.reverseList();
 
         // Stack using LinkedList
@@ -188,6 +198,7 @@ public class Program
         // Sorting
       //  _ = new InsertionSort();
        // _ = new QuickSort();
+       
     }
 
 }
