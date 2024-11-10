@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Tree
+﻿namespace PracticeProject.DataStructure.Tree
 {
     
     public class Node
@@ -20,7 +20,7 @@
             this.right = right;
         }
     }
-    public class Tree
+    public class TreeClass
     {
         public Node? root;
 

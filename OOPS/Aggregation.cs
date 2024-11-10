@@ -1,4 +1,4 @@
-﻿namespace OOPS
+﻿namespace PracticeProject.OOPS
 {
     // Department class representing a department in a university
     public class Department
@@ -7,7 +7,7 @@
 
         public Department(string name)
         {
-            this.Name = name;
+            Name = name;
         }
         public void OfferCourses()
         {
@@ -23,9 +23,9 @@
 
         public University(string name)
         {
-            this.Name = name;
-            this.departments = new List<Department>();
-        }      
+            Name = name;
+            departments = new List<Department>();
+        }
 
         public void AddDepartment(Department department)
         {

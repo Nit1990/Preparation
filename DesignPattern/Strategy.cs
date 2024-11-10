@@ -1,4 +1,4 @@
-namespace DesignPattern
+namespace PracticeProject.DesignPattern
 {
 
     // Context class - Vehicle 

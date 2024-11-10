@@ -1,7 +1,19 @@
-﻿namespace PrintPattern
+﻿namespace PracticeProject.Pattern
 {
     public class Pattern
     {
+        public Pattern()
+        {
+            // Pattern pattern = new Pattern();
+            // pattern.Pattern1();
+            // pattern.Pattern2();
+            //pattern.Pattern3();
+            // pattern.Pattern4();
+            //pattern.Pattern5();
+            // pattern.Pattern6();
+            // pattern.Pattern7();
+        }
+
         // Star Pattern
 
         public void Pattern1()
@@ -44,7 +56,6 @@
             }
 
         }
-
         public void Pattern4()
         {
             int n = 6;
@@ -58,7 +69,6 @@
             }
 
         }
-
         public void Pattern5()
         {
             int n = 6;
@@ -108,6 +118,6 @@
                 }
                 Console.WriteLine();
             }
-        }       
+        }
     }
 }

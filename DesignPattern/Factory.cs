@@ -1,4 +1,4 @@
-namespace DesignPattern
+namespace PracticeProject.DesignPattern
 {
 
     // Product interface    
@@ -48,7 +48,7 @@ namespace DesignPattern
 
         public PaymentProcessorCLient(IPaymentProcessorFactory factory)
         {
-            this.paymentProcessorFactory = factory;
+            paymentProcessorFactory = factory;
         }
 
         public void ProcessPayment(double amount)

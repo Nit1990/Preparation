@@ -1,18 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-using OOPS;
-using Coding;
-using DesignPattern;
-using MediumLeetcode;
-using GeeksArray;
-using SOLID;
-using PrintPattern;
-using DataStructure.Stack;
-using DataStructure.LinkedList;
+﻿using SOLID;
 using Sorting;
-using DataStructure.Tree;
-using ConsoleApp.DesignPattern;
-using HackerRank;
+using PracticeProject.HackerRank;
 using BenchmarkDotNet.Running;
+using PracticeProject.Geeks;
+using PracticeProject.DataStructure.LinkedList;
+using PracticeProject.DataStructure.Stack;
+using PracticeProject.DataStructure.Tree;
+using PracticeProject.DataStructure;
+using PracticeProject.LeetCode;
+using PracticeProject.OOPS;
+using PracticeProject.DesignPattern;
+using PracticeProject.Pattern;
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public class Program
@@ -22,7 +20,7 @@ public class Program
     // Driver Code
     public static void Main()
     {
-        
+
         // Search
         // BinarySearch obj = new BinarySearch();
         // obj.BinarySearch();
@@ -30,170 +28,30 @@ public class Program
 
 
         // OOPS
-
-        // Derived obj = new Derived();
-        // Base bcdc = new Derived();
-        // bcdc.show();
-        //   CompositionExample comp = new();
-        //   AssociationExample asso = new();
-        //AggregationExample aggre = new();
+        _ = new ObjectOriented();
 
         // SOLID
         //Liskov liskov = new Liskov();
 
-
-        // Coding
-
-        //GMS obj = new();
-        //obj.NoOfCharacter();
-        // obj.FirstNonRepetingCharbyArray();
-        //obj.FirstNonRepetingCharbyDict();
-        // obj.PowerOf10();
-        // obj.LongestCommonSubString();
-        //obj.SplitDictionary();
-        // obj.ValidPalindrome();
-        //obj.MaxArea();
-        //obj.MaxAreaUsingWhile();
-        //obj.FirstOccurence();
-        //obj.IsAnagram();
-        //obj.ContainsDuplicate();
-        // obj.RemoveDuplicates();
-        // obj.TwoSum();
-        //obj.BestTimeToBuy();
-        // obj.ReplaceElements();
-        // obj.IsSubsequence();
-        //  obj.MoveZero();
-        // obj.LongestCommonPrefix();
-        // obj.MoveZero();
-        // obj.NumUniqueEmails();
-        // obj.CanPlaceFlowers();
-        //obj.LargestElementArray();
-        //  obj.LargestElementArrayForLoop();
-        //obj.SecondSmallestAndSecondLargestArray();
-        // obj.IsArraySorted();
-        //obj.UnionOfArray();
-        // obj.AppearOnceInArray();
-        //  obj.MaximumOneInArray();
-        //obj.LongestSubArray();
-        //obj.ReverseVowels();
-        //obj.RearrangebySign();
-        //obj.ReverseWords();
-        // obj.FrequencyOfLetter();
-        //obj.PalindromicArray();
-        // obj.isSubset();
-        //  obj.IsStringRotation();
-        // obj.LongestCommonSubsequence();
-
         // Geeks for geeks
+       // _ = new Geeks();
 
-        //  Arrays obj = new Arrays();
-        // obj.LeadersInArray();
-        // obj.RotateArrayOnePlace();
-        //obj.RotateArrayByKElementsUsingTempArray();
-        //obj.RotateArrayByKElementsLeft();
-        // obj.ReverseWordInString();
-        //  obj.MinimumJump();
-        // obj.LongestConsecutiveSequenceInArray();
-        //  obj.RemoveDuplicateFromSortedArray();
+        // DataStructure
+       // _ = new DataStructure();
 
-        // LinkedList
-
-         SingleLinkedList linkedList = new SingleLinkedList();
-         linkedList.push_back(5);
-         linkedList.push_back(7);
-         linkedList.push_back(9);
-         linkedList.push_back(15);
-         SingleLinkedList list2 = new SingleLinkedList();
-         list2.push_back(4);
-         list2.push_back(8);
-         list2.push_back(10);
-         list2.push_back(30);
-         list2.push_back(80);
-        linkedList.MergeLinkedList(list2);
-
-        // linkedList.BubbleSortExData();
-        // linkedList.reverseList();
-
-        // Stack using LinkedList
-
-        // StackUsingLinkedList stack = new StackUsingLinkedList();
-        // stack.ValidParentheses("{()[]");
-
-        // Stack using Array
-
-        //StackUsingArray stack = new StackUsingArray();
-        //stack.push(7);
-        //stack.push(8);
-        //stack.Show();
-        //stack.pop();
-        //stack.Show();
-
-        // Tree
-        //Tree tree = new Tree();
-        //tree.Insert(5);
-        //tree.Insert(3);
-        //tree.Insert(6);
-
-        // Medium Leetcode
-
-        // Medium objMedium = new Medium();
-        // var result = objMedium.GroupAnagrams();
-        // objMedium.TopKFrequentElements();
-        // objMedium.ProductExceptSelf();
-        // objMedium.TwoSumArrayIsSorted();
-        // objMedium.ThreeSum();
-        // objMedium.MaxSubArraySum();
-        //objMedium.KadaneAlgorithm();
-        //objMedium.Sort012();
-        // objMedium.BuyAndSell();
-        // objMedium.CanJump();
+        // LeetCode
+       // _ = new Leetcode();
 
         //HackerRank
-        //HackerRank.HackerRank obj = new();
-        //obj.GetExcelColumnName();
+      //  HackerRank hck = new HackerRank();
+      //  var summary = BenchmarkRunner.Run<HackerRank>();
 
-        //var summary = BenchmarkRunner.Run<HackerRank.HackerRank>();
-
-
-        //Singelton.GetInstance();
-        //Singelton.GetInstance();
-
-        // Adapter 
-        // AdapterExample adapterExample = new();
-
-        // Factory
-        // FactoryExample factoryExample = new();
-
-        //Decorator
-        Decorator objDecoration = new();
-
-        // Strategy Design Pattern
-
-        // The client code picks a concrete strategy and passes it to the
-        // context. The client should be aware of the differences between
-        // strategies in order to make the right choice.
-        // var context = new Context();
-
-        // Console.WriteLine("Client: Strategy is set to normal sorting.");
-        // context.SetStrategy(new ConcreteStrategyA());
-        // context.DoSomeBusinessLogic();
-
-        // Console.WriteLine();
-
-        // Console.WriteLine("Client: Strategy is set to reverse sorting.");
-        // context.SetStrategy(new ConcreteStrategyB());
-        // context.DoSomeBusinessLogic();
+        // Design Pattern
+         _ = new DesignPattern();
 
         // Pattern
-
-       // Pattern pattern = new Pattern();
-        // pattern.Pattern1();
-        // pattern.Pattern2();
-        //pattern.Pattern3();
-        // pattern.Pattern4();
-        //pattern.Pattern5();
-        // pattern.Pattern6();
-        // pattern.Pattern7();
+        _ = new Pattern();
+        
 
         // Sorting
       //  _ = new InsertionSort();

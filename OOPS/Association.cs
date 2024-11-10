@@ -1,11 +1,11 @@
-﻿namespace OOPS
+﻿namespace PracticeProject.OOPS
 {
     public class Teacher
     {
         public string Name { get; set; }
         public Teacher(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         public void Teach()
@@ -38,7 +38,7 @@
         public Classroom(Teacher teacher)
         {
             this.teacher = teacher;
-            this.students = new List<Student>();
+            students = new List<Student>();
         }
         public void AddStudents(Student student)
         {

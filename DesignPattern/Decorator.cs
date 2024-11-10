@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.DesignPattern
+﻿namespace PracticeProject.DesignPattern
 {
     public abstract class BasePizza
     {
@@ -38,11 +38,11 @@
 
         public PizzaDecorator(BasePizza basePizza)
         {
-                _basePizza = basePizza;
+            _basePizza = basePizza;
         }
 
         public override int Cost() => _basePizza.Cost();
-       
+
     }
 
     public class CheeseDecorator : PizzaDecorator
@@ -53,7 +53,7 @@
 
         public override int Cost()
         {
-            return _basePizza.Cost() + 12; 
+            return _basePizza.Cost() + 12;
         }
     }
 
@@ -61,7 +61,7 @@
     {
         public OliveDecorator(BasePizza basePizza) : base(basePizza)
         {
-                
+
         }
         public override int Cost()
         {

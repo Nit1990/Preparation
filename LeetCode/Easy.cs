@@ -4,9 +4,9 @@ using System.Collections;
 using System.Text;
 using BenchmarkDotNet.Disassemblers;
 
-namespace Coding
+namespace PracticeProject.LeetCode
 {
-    class GMS
+    class Easy
     {
         // String - No of Character
         public void NoOfCharacter()
@@ -160,7 +160,7 @@ namespace Coding
             string str = "abcabcbb";
             int maxLength = 0;
             // left pointer
-            int left = 0; 
+            int left = 0;
 
             HashSet<char> set = new HashSet<char>();
 
@@ -178,7 +178,7 @@ namespace Coding
                 set.Add(str[right]);
 
                 // update max length
-                maxLength = Math.Max(maxLength, right - left+1);
+                maxLength = Math.Max(maxLength, right - left + 1);
 
             }
 
@@ -218,7 +218,7 @@ namespace Coding
             int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 
             int Area = 0;
-            var watch = new System.Diagnostics.Stopwatch();
+            var watch = new Stopwatch();
             watch.Start();
             for (int i = 0; i < height.Length; i++)
             {
@@ -239,7 +239,7 @@ namespace Coding
             int Area = 0;
             int start = 0;
             int end = height.Length - 1;
-            var watch = new System.Diagnostics.Stopwatch();
+            var watch = new Stopwatch();
             watch.Start();
             while (start < end)
             {
@@ -280,8 +280,8 @@ namespace Coding
 
         // String - Longest Common Prefix
         public void LongestCommonPrefix()
-        { 
-            string[] str = { "geek","geeksforgeeks", "geeks","geezer"};
+        {
+            string[] str = { "geek", "geeksforgeeks", "geeks", "geezer" };
 
             if (str.Length == 0) Console.WriteLine(" ");
 
@@ -316,7 +316,7 @@ namespace Coding
                 while (x > 0)
                 {
                     reminder = x % 10;
-                    reverse = (reverse * 10) + reminder;
+                    reverse = reverse * 10 + reminder;
                     x = x / 10;
                 }
             }
@@ -447,7 +447,7 @@ namespace Coding
                     Console.WriteLine("{0} {1}", dict[diff], i);
                 }
                 // Saving Index
-                dict[nums[i]] = i; 
+                dict[nums[i]] = i;
             }
 
 
@@ -577,7 +577,7 @@ namespace Coding
                 {
                     localName = localName.Split('+')[0];
                 }
-                localName = localName.Replace(".", String.Empty);
+                localName = localName.Replace(".", string.Empty);
                 string forwardEmail = localName + "@" + domainName;
                 uniqueEmail.Add(forwardEmail);
             }
@@ -634,19 +634,18 @@ namespace Coding
         {
             int[] arr = { 2, 5, 1, 3, 0, 3, 13, 43, 2, 54, 33, 200 };
 
-            
+
             int max = 0;
 
-          for(int i = 0; i< arr.Length;i++)
-          {
-               if(arr[i] > max){
-                max = arr[i];
-               }
-          }
-           Console.WriteLine(max);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
             }
-           
-        
+            Console.WriteLine(max);
+        }
 
         // Array - Second Smallest and Second Largest
         public void SecondSmallestAndSecondLargestArray()
@@ -659,7 +658,7 @@ namespace Coding
 
 
         }
-        
+
         // Array
         public void IsArraySorted()
         {
@@ -708,10 +707,10 @@ namespace Coding
 
         public void AppearOnceInArray()
         {
-            int[] arr = { 4, 1, 2, 1, 2 ,3};
+            int[] arr = { 4, 1, 2, 1, 2, 3 };
 
             HashSet<int> set = new HashSet<int>();
-           
+
             foreach (int i in arr)
             {
                 if (set.Contains(i))
@@ -759,11 +758,11 @@ namespace Coding
             {
                 localMax = Math.Max(localMax + arr[i], arr[i]);
 
-                if(localMax > globalMax)
+                if (localMax > globalMax)
                 {
                     globalMax = localMax;
                 }
-                if(localMax < 0)
+                if (localMax < 0)
                 {
                     localMax = 0;
                 }
@@ -771,7 +770,7 @@ namespace Coding
             }
             Console.WriteLine(globalMax);
         }
-    
+
         public void ReverseVowels()
         {
             StringBuilder s = new("hello");
@@ -779,7 +778,7 @@ namespace Coding
             int start = 0;
             int end = s.Length - 1;
 
-            while(start < end)
+            while (start < end)
             {
                 if (!IsVowel(s[start]))
                 {
@@ -814,7 +813,7 @@ namespace Coding
         // Array - Alternate positive and negative number.
         public void RearrangebySign()
         {
-            int[] arr = { 1,2,-3,-1,-2,3 };
+            int[] arr = { 1, 2, -3, -1, -2, 3 };
             int n = arr.Length;
 
             int[] positive = new int[n / 2];
@@ -829,7 +828,7 @@ namespace Coding
                 if (num > 0)
                 {
                     positive[positiveIndex++] = num;
-                   
+
                 }
                 else
                 {
@@ -849,17 +848,17 @@ namespace Coding
 
 
         }
-    
+
         // String - Reverse Words in a String
         public void ReverseWords()
         {
             string s = "a good   example";
             string b = s.Trim();
 
-            string[] str = s.Split(' ',StringSplitOptions.RemoveEmptyEntries);
+            string[] str = s.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             int start = 0;
-            int end = str.Length-1;
+            int end = str.Length - 1;
 
             while (start < end)
             {
@@ -871,7 +870,7 @@ namespace Coding
 
             Console.WriteLine(a);
         }
-    
+
         // String - find the frequency of each character
         // and return string with combination of char and its fequency
         public void FrequencyOfLetter()
@@ -895,11 +894,11 @@ namespace Coding
 
             foreach (KeyValuePair<char, int> item in dict)
             {
-                str.Append(Convert.ToString(item.Key)+item.Value);
+                str.Append(Convert.ToString(item.Key) + item.Value);
             }
-           
+
         }
-   
+
         public int PalindromicArray()
         {
             int[] arr = { 111, 222, 333, 444 };
@@ -957,7 +956,7 @@ namespace Coding
                 {
                     dict[j]--;
                 }
-               
+
             }
 
             // Check if all elements in a2 have been accounted for in a1
@@ -971,12 +970,12 @@ namespace Coding
 
             return "Yes";
         }
-    
+
         public void IsStringRotation()
         {
             string s1 = "mightandmagic";
             string s2 = "andmagicmigth";
-          
+
             if (s1.Length != s2.Length || s1.Length == 0)
             {
                 Console.Write("Not");

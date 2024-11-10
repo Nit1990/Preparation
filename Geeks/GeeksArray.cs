@@ -1,14 +1,14 @@
-namespace GeeksArray
+namespace PracticeProject.Geeks
 {
 
-    public class Arrays
+    public class GeeksArrays
     {
         // An element of array is a leader if it is greater than or equal to all the elements to its right side
         public int[] LeadersInArray()
         {
             int[] arr = { 16, 17, 4, 3, 5, 2 };
             int N = 6;
-          
+
             int j = N - 1;
 
             List<int> list = new List<int>();
@@ -182,11 +182,11 @@ namespace GeeksArray
 
             }
         }
- 
+
         public void RemoveDuplicateFromSortedArray()
         {
             int j = 0;
-            int[] arr = {1,2,2,4 };
+            int[] arr = { 1, 2, 2, 4 };
             for (int i = 1; i < arr.Length; i++)
             {
                 if (arr[i] != arr[j])

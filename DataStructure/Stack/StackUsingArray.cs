@@ -1,10 +1,10 @@
-﻿namespace DataStructure.Stack
+﻿namespace PracticeProject.DataStructure.Stack
 {
     public class StackUsingArray
     {
         int[] stackArray = new int[100];
         int top = -1;
-        
+
         public void push(int x)
         {
             top++;
@@ -19,7 +19,7 @@
         }
         public int Size()
         {
-            return top +1;
+            return top + 1;
         }
 
         public void Show()

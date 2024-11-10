@@ -1,4 +1,4 @@
-namespace ConsoleApp.DataStructure.Stack
+namespace PracticeProject.DataStructure.Stack
 {
 
     public class StackUsingLinkedList

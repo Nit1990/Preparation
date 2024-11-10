@@ -1,11 +1,20 @@
 ﻿using BenchmarkDotNet;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
-namespace HackerRank
+namespace PracticeProject.HackerRank
 {
     [MemoryDiagnoser]
     public class HackerRank
     {
+
+        public HackerRank()
+        {
+            GetExcelColumnName();
+            
+
+        }
+
         [Benchmark]
         public void GetExcelColumnName()
         {

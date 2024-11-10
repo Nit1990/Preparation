@@ -1,4 +1,4 @@
-namespace OOPS
+namespace PracticeProject.OOPS
 {
 
     public class Base
@@ -39,7 +39,7 @@ namespace OOPS
             dynamic dynamic = 10;
             object obj = 10;
 
-          //  variable = "Hi";
+            //  variable = "Hi";
 
             dynamic = "Hello";
 
